@@ -1,9 +1,9 @@
 console.log("content.js loaded");
 
-const apiKey = ""; // Replace with your API key
-const itemID = 198342691; // Make sure this is the correct item ID
-const limit = 1; // Set limit
-const offset = 0; // Set offset
+const apiKey = ""; 
+const itemID = 198342691; 
+const limit = 1;
+const offset = 0;
 let container; // For the interface
 let interfaceOpen = false; // Interface state
 let toggleButton; // Button for opening the interface
@@ -28,10 +28,10 @@ async function fetchDiscount() {
     console.log("Received data:", data);
 
     if (data.data && data.data.listGoods && data.data.listGoods.length > 0) {
-      const currentDiscount = data.data.listGoods[0].discount; // Current discount
-      const currentPrice = data.data.listGoods[0].sizes[0].price; // Current price
+      const currentDiscount = data.data.listGoods[0].discount; // current discount
+      const currentPrice = data.data.listGoods[0].sizes[0].price; // current price
 
-      const finalPriceFromSite = await getFinalPriceFromSite(); // Get the final price from the site
+      const finalPriceFromSite = await getFinalPriceFromSite(); // get the final price from the site
       createInterface(currentDiscount, currentPrice, finalPriceFromSite);
     } else {
       console.error("Item not found");
@@ -85,18 +85,18 @@ function createToggleButton() {
   toggleButton.style.position = "fixed";
   toggleButton.style.top = "20px";
   toggleButton.style.right = "20px";
-  toggleButton.style.backgroundColor = "#5B2E91"; // Purple button background
-  toggleButton.style.color = "#fff"; // White button text
-  toggleButton.style.border = "none"; // No border
-  toggleButton.style.borderRadius = "5px"; // Rounded corners
-  toggleButton.style.padding = "10px"; // Button padding
-  toggleButton.style.cursor = "pointer"; // Pointer cursor on hover
-  toggleButton.style.zIndex = "1000"; // Set z-index for visibility
+  toggleButton.style.backgroundColor = "#5B2E91"; 
+  toggleButton.style.color = "#fff"; 
+  toggleButton.style.border = "none"; 
+  toggleButton.style.borderRadius = "5px"; 
+  toggleButton.style.padding = "10px"; 
+  toggleButton.style.cursor = "pointer"; 
+  toggleButton.style.zIndex = "1000"; 
   toggleButton.addEventListener("click", () => {
     if (interfaceOpen) {
       container.remove();
-      container = null; // Reset the container
-      interfaceOpen = false; // Set the interface state to closed
+      container = null; 
+      interfaceOpen = false; 
     } else {
       fetchDiscount();
     }
@@ -108,10 +108,10 @@ function createToggleButton() {
 function createInterface(currentDiscount, currentPrice, finalPriceFromSite) {
   container = document.createElement("div");
   container.style.position = "fixed";
-  container.style.top = "120px"; // Offset from the button
+  container.style.top = "120px"; 
   container.style.right = "20px";
-  container.style.backgroundColor = "#fff"; // White background
-  container.style.border = "1px solid #ccc"; // Gray border
+  container.style.backgroundColor = "#fff"; 
+  container.style.border = "1px solid #ccc"; 
   container.style.padding = "10px";
   container.style.zIndex = "1000";
   container.style.boxShadow = "0 2px 10px rgba(0,0,0,0.2)";
@@ -158,31 +158,31 @@ function createInterface(currentDiscount, currentPrice, finalPriceFromSite) {
   // Style elements
   const labels = container.querySelectorAll("label");
   labels.forEach((label) => {
-    label.style.color = "#5B2E91"; // Purple color for labels
+    label.style.color = "#5B2E91"; 
   });
 
   const inputFields = container.querySelectorAll("input, span");
   inputFields.forEach((field) => {
-    field.style.fontSize = "14px"; // Font size
+    field.style.fontSize = "14px"; 
   });
 
   const buttons = container.querySelectorAll("button");
   buttons.forEach((button) => {
-    button.style.backgroundColor = "#5B2E91"; // Purple button background
-    button.style.color = "#fff"; // White button text
-    button.style.border = "none"; // No border
-    button.style.borderRadius = "5px"; // Rounded corners
-    button.style.cursor = "pointer"; // Pointer cursor on hover
-    button.style.padding = "8px 12px"; // Button padding
-    button.style.marginTop = "5px"; // Top margin
-    button.style.width = "100%"; // Full width
-    button.style.boxShadow = "0 1px 5px rgba(0,0,0,0.2)"; // Button shadow
-    button.style.transition = "background-color 0.3s"; // Smooth color transition
+    button.style.backgroundColor = "#5B2E91"; 
+    button.style.color = "#fff"; 
+    button.style.border = "none"; 
+    button.style.borderRadius = "5px"; 
+    button.style.cursor = "pointer"; 
+    button.style.padding = "8px 12px"; 
+    button.style.marginTop = "5px"; 
+    button.style.width = "100%"; 
+    button.style.boxShadow = "0 1px 5px rgba(0,0,0,0.2)"; 
+    button.style.transition = "background-color 0.3s"; 
     button.addEventListener("mouseenter", () => {
-      button.style.backgroundColor = "#4A2A73"; // Darker color on hover
+      button.style.backgroundColor = "#4A2A73"; 
     });
     button.addEventListener("mouseleave", () => {
-      button.style.backgroundColor = "#5B2E91"; // Reset color
+      button.style.backgroundColor = "#5B2E91"; 
     });
   });
 
