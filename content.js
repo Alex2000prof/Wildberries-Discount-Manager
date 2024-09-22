@@ -4,9 +4,9 @@ const apiKey = "";
 const itemID = 198342691; 
 const limit = 1;
 const offset = 0;
-let container; // For the interface
-let interfaceOpen = false; // Interface state
-let toggleButton; // Button for opening the interface
+let container; // for the interface
+let interfaceOpen = false; // interface state
+let toggleButton; // button for opening the interface
 
 async function fetchDiscount() {
   const api_url = `https://discounts-prices-api.wildberries.ru/api/v2/list/goods/filter?filterNmID=${itemID}&limit=${limit}&offset=${offset}`;
