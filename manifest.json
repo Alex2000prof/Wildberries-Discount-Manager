@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Wildberries Discount Manager",
+  "version": "1.0",
+  "description": "Плагин для управления скидками на Wildberries",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.wildberries.ru/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
