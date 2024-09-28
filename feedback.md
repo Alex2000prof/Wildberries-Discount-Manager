@@ -1,0 +1,3 @@
+1. I didn’t quite understand the purpose of choosing this extension for your hackathon project. You’re learning to become a full-stack developer, so it’s important to showcase your ability to build a complete full-stack app or website. Choosing a larger, more ambitious project would allow you to showcase your full potential. In the future, try to focus on something that demonstrates more of your technical skills and addresses all aspects of the task.
+
+2. I would also recommend commenting on each step of your code. This helps people like me, who need to read your code from scratch, understand it better and faster.
